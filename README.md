@@ -23,25 +23,32 @@ vax-dist-app/
 │   ├── Docker
 │        ├── dockerfile
 │   ├── src
-│        ├── (many other folders and files)
+│        ├── config/ (contains kafka setup configs)
+│        ├── controllers/ (get the requested data from the models and return it)
+│        ├── entities/ (Have the entity classes and it is used to map database table and its fields with the entities and its attributes)
+│        ├── services/ (Deals with everything that has business logic)
+│        ├── routers/ (Forward requests to the appropriate controller functions)
+│        ├── utils/ (A helper folder that contains helper functions, constants, etc...)
+│        ├── ormconfig.json (typeorm database setup configs)
+│        ├── ormconfig.production.json (typeorm database setup configs used in production environment)
 │   ├── docker-compose.yml
 ├── customerAPI
 │   ├── Docker
 │        ├── dockerfile
 │   ├── src
-│        ├── (many other folders and files)
+│        ├── (structure similar to the AuthorityAPI)
 │   ├── docker-compose.yml
 ├── manufacturerAPI
 │   ├── Docker
 │        ├── dockerfile
 │   ├── src
-│        ├── (many other folders and files)
+│        ├── (structure similar to the AuthorityAPI)
 │   ├── docker-compose.yml
 ├── notaryAPI
 │   ├── Docker
 │        ├── dockerfile
 │   ├── src
-│        ├── (many other folders and files)
+│        ├── (structure similar to the AuthorityAPI)
 │   ├── docker-compose.yml
 ├── docker-compose.yml
 ├── setup.sh

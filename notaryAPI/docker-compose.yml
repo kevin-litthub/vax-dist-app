@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+  postgres_notary:
+    image: postgres
+    environment:
+      POSTGRES_USER: kevin
+      POSTGRES_PASSWORD: consensys
+      POSTGRES_DB: vax
+    ports:
+      - "25435:5432"
+    networks:
+      - notary-network
+  
+  notary:
+    image: notary
+    environment: 
+      NODE_ENV: production
+    ports:
+      - "27003:27003"
+    depends_on:
+      - postgres_notary
+    networks:
+      - notary-network
+
+networks:
+  notary-network:
+    name: notary-network
+

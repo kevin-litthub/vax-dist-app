@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+  postgres_manufacturer:
+    image: postgres
+    environment:
+      POSTGRES_USER: kevin
+      POSTGRES_PASSWORD: consensys
+      POSTGRES_DB: vax
+    ports:
+      - 25432:5432
+    networks:
+      - manufacturer-network
+  
+  manufacturer:
+    image: manufacturer
+    environment: 
+      NODE_ENV: production
+    ports:
+      - "27000:27000"
+    depends_on:
+      - postgres_manufacturer
+    networks:
+      - manufacturer-network
+      - kafka-network
+      - notary-network
+
+networks:
+  kafka-network:
+    external: true
+    name: kafka-network
+  notary-network:
+    external: true
+    name: notary-network
+  manufacturer-network:
+    name: manufacturer-network

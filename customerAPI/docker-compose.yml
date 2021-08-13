@@ -1,0 +1,35 @@
+version: '3'
+services:
+  postgres_customer:
+    image: postgres
+    environment:
+      POSTGRES_USER: kevin
+      POSTGRES_PASSWORD: consensys
+      POSTGRES_DB: vax
+    ports:
+      - '25434:5432'
+    networks:
+      - customer-network
+
+  customer:
+    image: customer
+    environment:
+      NODE_ENV: production
+    ports:
+      - '27002:27002'
+    depends_on:
+      - postgres_customer
+    networks:
+      - customer-network
+      - kafka-network
+      - notary-network
+
+networks:
+  kafka-network:
+    external: true
+    name: kafka-network
+  notary-network:
+    external: true
+    name: notary-network
+  customer-network:
+    name: customer-network

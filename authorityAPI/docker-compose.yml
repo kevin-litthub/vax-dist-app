@@ -1,0 +1,35 @@
+version: '3'
+services:
+  postgres_authority:
+    image: postgres
+    environment:
+      POSTGRES_USER: kevin
+      POSTGRES_PASSWORD: consensys
+      POSTGRES_DB: vax
+    ports:
+      - '25433:5432'
+    networks:
+      - authority-network
+
+  authority:
+    image: authority
+    environment:
+      NODE_ENV: production
+    ports:
+      - '27001:27001'
+    depends_on:
+      - postgres_authority
+    networks:
+      - authority-network
+      - kafka-network
+      - notary-network
+
+networks:
+  kafka-network:
+    external: true
+    name: kafka-network
+  notary-network:
+    external: true
+    name: notary-network
+  authority-network:
+    name: authority-network

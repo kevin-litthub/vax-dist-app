@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "83aeff39-dcbe-40e0-b038-576483415dfd",
+		"name": "vax-dist-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/createShipment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"vaccineName\": \"vacc 01\",\n  \"quantity\": 1000,\n  \"manufacturingDate\": \"1628434981403\",\n  \"expirationDays\": 180,\n  \"manufacturerId\": \"man_01\",\n  \"authorityId\": \"auth_01\",\n  \"customerId\": \"cust_01\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:27000/api/v1/createShipment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27000",
+					"path": [
+						"api",
+						"v1",
+						"createShipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"hash\": \"59d6c11e02e65447cdd85e7ea1984d48ed55e9d38b290a63ea8d098372dfba8a\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:27003/api/v1/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27003",
+					"path": [
+						"api",
+						"v1",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/event/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:27003/api/v1/event/5ac8923f-cfaa-4c00-92a7-444760dfc952",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27003",
+					"path": [
+						"api",
+						"v1",
+						"event",
+						"5ac8923f-cfaa-4c00-92a7-444760dfc952"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/shipShipment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"5bd09979-ff87-4afe-b3f2-a88aaeb0043b\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:27000/api/v1/shipShipment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27000",
+					"path": [
+						"api",
+						"v1",
+						"shipShipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/shipments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:27000/api/v1/shipments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27000",
+					"path": [
+						"api",
+						"v1",
+						"shipments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/approvedShipment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"5bd09979-ff87-4afe-b3f2-a88aaeb0043b\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:27001/api/v1/approvedShipment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27001",
+					"path": [
+						"api",
+						"v1",
+						"approvedShipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/blockShipment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"5bd09979-ff87-4afe-b3f2-a88aaeb0043b\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:27001/api/v1/blockShipment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "27001",
+					"path": [
+						"api",
+						"v1",
+						"blockShipment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

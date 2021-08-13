@@ -1,0 +1,14 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 25433,
+  "username": "kevin",
+  "password": "consensys",
+  "database": "vax",
+  "synchronize": true,
+  "logging": true,
+  "entities": ["src/entities/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/entities"
+  }
+}

@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "build:prod": "yarn run prettier-format && npx tsc -p tsconfig.production.json && yarn run executeBuild",
-    "executeBuild": "sh executeBuild.sh",
+    "build:prod": "yarn run prettier-format && npx tsc -p tsconfig.production.json",
     "start:dev": "yarn run build && yarn ts-node-dev src/index.ts",
     "start:prod": "yarn run build:prod && node src/index.ts",
     "lint": "eslint src/**/*.ts",
